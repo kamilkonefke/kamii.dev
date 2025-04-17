@@ -1,0 +1,32 @@
+---
+import '../styles/global.css';
+---
+
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>kamii.dev</title>
+    </head>
+    <body>
+        <header>
+            <a href="https://github.com/kamilkonefke/kamii.dev" target="_blank">
+                <img src="/github-mark-white.svg" alt="github.com/kamilkonefke" height="32px" width="32px">
+            </a>
+        </header>
+        <div class="center">
+            <slot></slot>
+        </div>
+    </body>
+    <footer>
+        <p id="footer-date"></p>
+    </footer>
+</html>
+
+<script is:inline>
+const date = new Date;
+var footer_date = document.getElementById("footer-date");
+footer_date.innerHTML = `${date.getFullYear()} Kamil Konefke`
+</script>

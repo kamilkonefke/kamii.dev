@@ -1,0 +1,80 @@
+---
+import Layout from '../layouts/Base.astro';
+---
+
+<Layout>
+    <div class="container">
+        <div>
+            <h1>Calculator</h1>
+            <div class="content">
+                <input placeholder="2+2" type="text" id="user-input">
+                <div class="result-background">
+                    <p id="result"></p>
+                    <p id="result-save-btn">+</p>
+                </div>
+            </div>
+            <ul id="save-list"></ul>
+        </div>
+    </div>
+</Layout>
+<script src="../scripts/calculator.js"></script>
+
+<style>
+h1 {
+    text-align: center;
+    margin: 12px
+}
+
+ul {
+    font-size: 1.3rem;
+    list-style-type: disc;
+    margin: 6px 12px 0 -12px;
+    height: 128px;
+    overflow-y: scroll;
+}
+
+.content {
+    box-shadow: #E6104E 0px 0px 24px;
+    border-radius: 6px;
+}
+
+.result-background {
+    display: flex;
+    background-color: #151515;
+    border: 4px solid #E6104E;
+    min-height: 47px;
+    border-radius: 6px;
+    margin: -10px 0 0 0;
+}
+
+#user-input {
+    background-color: #E6104E;
+    color: #fff;
+    padding: 8px;
+    border: 0;
+    width: 512px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    font-size: 1.2rem;
+    z-index: 10;
+}
+
+#user-input:focus {
+    outline: 0;
+}
+
+#result {
+    flex-grow: 1;
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 10px 6px 0 8px;
+}
+
+#result-save-btn {
+    padding: 7.5px 12px 0 8px;
+    flex-shrink: 1;
+    font-size: 1.6rem;
+    cursor: pointer;
+}
+
+</style>
