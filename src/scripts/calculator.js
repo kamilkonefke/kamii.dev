@@ -44,4 +44,4 @@ function calculate(input) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", init);
+document.addEventListener("astro:page-load", init);
