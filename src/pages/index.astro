@@ -1,41 +1,17 @@
 ---
 import Layout from '../layouts/Base.astro';
+import Menu from '../components/Menu.astro';
 ---
 
 <Layout>
-    <div>
-        <h1>Menu</h1>
-        <a class="not-working">about me</a>
-        <a class="not-working">blog</a>
-        <a class="not-working">projects</a>
-        <a href="/calculator">utilities</a>
+    <Menu title="Menu">
+        <a class="wip">about me</a>
+        <a class="wip">blog</a>
+        <a class="wip">projects</a>
+        <a href="/utils">utilities</a>
         <hr>
         <a href="https://github.com/kamilkonefke" target="_blank">github.com</a>
         <a href="https://x.com/kamilkonefke" target="_blank">x.com</a>
         <a href="https://kamiidev.itch.io" target="_blank">itch.io</a>
-    </div>
+    </Menu>
 </Layout>
-
-<style>
-hr {
-   color: #fff;
-   margin: 12px 0 12px 0;
-}
-
-div {
-    display: flex;
-    flex-direction: column;
-}
-
-a {
-    all: unset;
-    font-size: 1.6rem;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.not-working {
-    cursor: no-drop;
-}
-</style>

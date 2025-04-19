@@ -14,7 +14,7 @@ function init() {
 
     result_text = document.getElementById("result");
 
-    result_save_btn = document.getElementById("result-save-btn");
+    result_save_btn = document.getElementById("save-result-btn");
     result_save_btn.addEventListener("click", (event) => { save_result(result_text.innerHTML) } );
 
     save_list = document.getElementById("save-list");
@@ -24,7 +24,7 @@ function save_result(result) {
     if (result == ":(" || result == "") {
         return;
     }
-    save_list.insertAdjacentHTML("afterbegin", `<li>${result}</li>`);
+    save_list.insertAdjacentHTML("afterbegin", `<a class="saved-result">${result}</a>`);
 }
 
 function calculate(input) {

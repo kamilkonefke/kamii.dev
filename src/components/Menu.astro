@@ -1,0 +1,16 @@
+---
+const { title } = Astro.props;
+---
+
+<div class="menu">
+    <h1>{title}</h1>
+    <slot></slot>
+</div>
+
+<style>
+.menu {
+    width: 13vw;
+    display: flex;
+    flex-direction: column;
+}
+</style>
