@@ -1,66 +1,21 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+    --font-ibm-plex-serif: "IBM Plex Serif", serif;
+    --font-ibm-plex-sans: "IBM Plex Sans", sans-serif;
+    --color-black-me: #191724;
+    --color-white-me: #e0def4;
+    --color-white-muted-me: #6e6a86;
+    --color-white-high-me: #908caa;
+    --color-violet-me: #c4a7e7;
+    --color-rose-me: #ebbcba;
+    --color-love-me: #eb6f92;
 }
 
-body {
-    font-family: 'Gill Sans', 'Noto Sans', sans-serif;
-    background-color: #151515;
-    color: #f5f5f5;
-}
-
-h1 {
-    font-size: 4rem;
-}
-
-footer {
-    width: 100vw;
-    text-align: center;
-    position: fixed;
-    bottom: 0;
-    margin: 0;
-    padding: 10px;
-    opacity: 0.1;
-}
-
-header img {
-    padding: 10px;
-}
-
-header {
-    position: fixed;
-    top: 0;
-}
-
-.center {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* menu */
-.menu a {
-    all: unset;
-    font-size: 1.6rem;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.menu hr {
-   color: #fff;
-   margin: 12px 0 12px 0;
-}
-
-.menu .wip {
-    cursor: no-drop;
-}
-
-.saved-result {
-    margin: 4px;
-    padding: 4px;
-    background-color: #e6104e;
-    border-radius: 6px;
+html {
+    font-size: 18px;
 }

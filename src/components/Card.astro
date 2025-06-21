@@ -1,0 +1,11 @@
+---
+const { url, title, pub_date, desc, target="_self" } = Astro.props
+---
+
+<li class="hover:text-white-high-me transition-colors m-2">
+    <a href={url} target={target}>
+        <span class="font-bold">{title}</span>
+        <span class="text-white-muted-me italic">{pub_date}</span>
+        <p>{desc}</p>
+    </a>
+</li>

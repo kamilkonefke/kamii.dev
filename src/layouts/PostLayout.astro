@@ -1,0 +1,24 @@
+---
+import BaseLayout from "./BaseLayout.astro"
+const { frontmatter } = Astro.props
+---
+
+<BaseLayout title={frontmatter.title}>
+<main class="flex justify-center">
+    <div class=" xl:w-[45vw] lg:w-[50vw] md:w-[60vw] sm:w-[75vw] m-4">
+        <header>
+            <div class="flex">
+                <a class="text-3xl hover:text-white-high-me duration-250 mr-3" href="/">←</a>
+                <p class="text-3xl font-bold">{frontmatter.title}</p>
+            </div>
+            <div>
+                <p><span class="text-love-me font-bold">Kamil Konefke </span><span class="text-white-muted">{frontmatter.pub_date}</span></p>
+            </div>
+        </header>
+        <hr class="mt-5 mb-5">
+        <article class="prose-base prose-img:rounded-xl prose-img:w-full prose-h1:leading-0 prose-h1:mb-6 prose-h1:mt-9 prose-p:font-ibm-plex-sans prose-ul:list-disc prose-ul:mt-0 prose-ol:list-decimal prose-li:m-0 prose-ol:mt-0">
+            <slot/>
+        </article>
+    </div>
+</main>
+</BaseLayout>

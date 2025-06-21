@@ -1,17 +1,40 @@
 ---
-import Layout from '../layouts/Base.astro';
-import Menu from '../components/Menu.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Card from '../components/Card.astro';
+
+const AllPosts = Object.values(import.meta.glob('./posts/*.md', { eager: true }));
+AllPosts.sort((a: any, b: any) => Date.parse(b.frontmatter.pub_date) - Date.parse(a.frontmatter.pub_date));
+
+const AllProjects = Object.values(import.meta.glob('./projects/*.md', { eager: true }));
+AllProjects.sort((a: any, b: any) => Date.parse(b.frontmatter.pub_date) - Date.parse(a.frontmatter.pub_date));
 ---
 
-<Layout>
-    <Menu title="Menu">
-        <a class="wip">about me</a>
-        <a class="wip">blog</a>
-        <a class="wip">projects</a>
-        <a href="/utils">utilities</a>
-        <hr>
-        <a href="https://github.com/kamilkonefke" target="_blank">github.com</a>
-        <a href="https://x.com/kamilkonefke" target="_blank">x.com</a>
-        <a href="https://kamiidev.itch.io" target="_blank">itch.io</a>
-    </Menu>
-</Layout>
+<BaseLayout title="kamii">
+<main class="flex flex-col justify-center items-center min-h-screen">
+    <div class="m-4">
+        <header class="flex flex-col">
+            <div class="flex flex-row">
+                <div class="w-full">
+                    <h1 class="text-3xl">Kamii</h1>
+                    <p class="italic">Kamil Konefke</p>
+                </div>
+                <div>
+                    <img class="rounded-md" src="/vulkan.png" alt="vulkan triangle" width="96">
+                </div>
+            </div>
+            <p class="font-bold text-love-me">Game developer</p>
+            <p>Wannabe <span class="text-love-me">graphics programmer</span></p>
+        </header>
+
+        <section>
+            <h1 class="text-3xl font-bold">Posts</h1>
+            <ul>{AllPosts.map((post: any) => <Card url={post.url} title={post.frontmatter.title} desc={post.frontmatter.desc} pub_date={post.frontmatter.pub_date}></Card>)}</ul>
+        </section>
+
+        <section>
+            <h1 class="text-3xl font-bold">Projects</h1>
+            <ul>{AllProjects.map((project: any) => <Card url={project.frontmatter.link} target="_blank" title={project.frontmatter.title} desc={project.frontmatter.desc} pub_date={project.frontmatter.pub_date}></Card>)}</ul>
+        </section>
+    </div>
+</main>
+</BaseLayout>
